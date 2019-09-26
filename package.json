@@ -3,6 +3,9 @@
   "version": "4.1.0",
   "description": "Print on Epson and Star thermal printers with NodeJS",
   "main": "node-thermal-printer.js",
+  "scripts": {
+    "postinstall": "node_modules/.bin/rn-nodeify --install crypto,fs,https --hack"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Klemen1337/node-thermal-printer"
@@ -21,13 +24,27 @@
   },
   "homepage": "https://github.com/Klemen1337/node-thermal-printer",
   "dependencies": {
+    "https-browserify": "0.0.1",
     "iconv-lite": "0.4.24",
     "pngjs": "3.3.3",
-    "react-native-fs": "^2.14.1",
+    "react-native-crypto": "^2.2.0",
+    "react-native-level-fs": "^3.0.1",
+    "react-native-randombytes": "^3.5.3",
+    "rn-nodeify": "^10.1.0",
     "unorm": "1.4.1",
     "write-file-queue": "0.0.1"
   },
   "devDependencies": {
     "@types/node": "^10.14.2"
+  },
+  "react-native": {
+    "crypto": "react-native-crypto",
+    "https": "https-browserify",
+    "fs": "react-native-level-fs"
+  },
+  "browser": {
+    "crypto": "react-native-crypto",
+    "https": "https-browserify",
+    "fs": "react-native-level-fs"
   }
 }
